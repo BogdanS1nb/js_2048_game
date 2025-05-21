@@ -3,10 +3,10 @@
 const Game = require('../modules/Game.class');
 const game = new Game();
 
-const boardElement = document.querySelector('.field');
-const scoreElement = document.querySelector('.score-value');
-const statusElement = document.querySelector('.status');
-const startButton = document.querySelector('.start-button');
+const boardElement = document.querySelector('.game-field');
+const scoreElement = document.querySelector('.game-score');
+const statusElement = document.querySelector('.message-lose');
+const startButton = document.querySelector('.button.start');
 
 function render() {
   const state = game.getState();
@@ -32,7 +32,7 @@ function render() {
     statusElement.textContent = 'You win!';
     statusElement.classList.remove('hidden');
   } else if (mainstatus === 'lose') {
-    statusElement.textContent = 'Game Over!';
+    statusElement.textContent = 'You lose! Restart the game?';
     statusElement.classList.remove('hidden');
   } else {
     statusElement.classList.add('hidden');
