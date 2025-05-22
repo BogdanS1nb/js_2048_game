@@ -7,6 +7,7 @@ const boardElement = document.querySelector('.game-field');
 const scoreElement = document.querySelector('.game-score');
 const statusElement = document.querySelector('.message-lose');
 const startButton = document.querySelector('.button.start');
+const messageStart = document.querySelector('.message-start');
 
 function render() {
   const state = game.getState();
@@ -73,6 +74,7 @@ document.addEventListener('keydown', (e) => {
 startButton.addEventListener('click', () => {
   if (game.getStatus() === 'idle') {
     game.start();
+    messageStart.classList.add('hidden');
     startButton.classList.remove('start');
     startButton.classList.add('restart');
     startButton.textContent = 'Restart';
